@@ -116,10 +116,8 @@ namespace BLL
         public List<Servicios> FiltroFecha(int mes, int año, string tipoServicio)
         {
             Consultar();
-            
-            return servicios.Where(p => p.Fecha.Month.Equals(mes) && p.Fecha.Year.Equals(año)
-                                    && D.Campaña.Equals(campaña)).ToList();
-            
+            return servicios .Where(p => p.Fecha.Equals(mes) && p.Fecha.Equals(año)).ToList();
+
         }
     }
 }
